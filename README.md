@@ -9,10 +9,10 @@ I developed these solutions live in front of students at Dev Bootcamp, solicitin
 Thank you for taking the time to visit this repo.
 
 ============
-FizzBuzz: https://vimeo.com/81525177
-Generating Prime Numbers: https://vimeo.com/81531665
-Linked Lists: https://vimeo.com/81538522
-Caesar Cipher: https://vimeo.com/81541932
-Trees: https://vimeo.com/81561522
-Pivot Index: https://vimeo.com/81562366
-Numbers In Words: https://vimeo.com/81564044
+* FizzBuzz: https://vimeo.com/81525177
+* Generating Prime Numbers: https://vimeo.com/81531665
+* Linked Lists: https://vimeo.com/81538522
+* Caesar Cipher: https://vimeo.com/81541932
+* Trees: https://vimeo.com/81561522
+* Pivot Index: https://vimeo.com/81562366
+* Numbers In Words: https://vimeo.com/81564044
