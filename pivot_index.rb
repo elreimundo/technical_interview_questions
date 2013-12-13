@@ -1,3 +1,6 @@
+# This method is optimized in *space*; that is, it requires almost no
+# additional memory allocation beyond the original array
+
 def pivot_index(array)
   total = array.inject(:+)
   running_count = 0
@@ -10,6 +13,10 @@ def pivot_index(array)
   end
   -1
 end
+
+# This method is even faster than the previous method, so it is likely
+# optimized in *time* (only one complete cycle plus a hash lookup is faster
+# than the one-to-two passes above), but it requires O(N) space
 
 def pivot_index_with_hashes_this_time(array)
   running_counts = Hash.new
