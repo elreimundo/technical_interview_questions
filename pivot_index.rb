@@ -1,3 +1,5 @@
+require 'benchmark'
+
 # This method is optimized in *space*; that is, it requires almost no
 # additional memory allocation beyond the original array
 
@@ -14,9 +16,9 @@ def pivot_index(array)
   -1
 end
 
-# This method is even faster than the previous method, so it is likely
-# optimized in *time* (only one complete cycle plus a hash lookup is faster
-# than the one-to-two passes above), but it requires O(N) space
+# Run this code with the benchmarks at the bottom to verify that
+# the above method, in addition to being more efficient in *space*,
+# is also more efficient in *time* than the following:
 
 def pivot_index_with_hashes_this_time(array)
   running_counts = Hash.new
@@ -28,7 +30,15 @@ def pivot_index_with_hashes_this_time(array)
   running_counts[running_count] || -1
 end
 
-puts pivot_index([1,3,2,7,5,1]) == 3
-puts pivot_index_with_hashes_this_time([1,3,2,7,5,1]) == 3
-puts pivot_index([1,3,2,7,5]) == -1
-puts pivot_index_with_hashes_this_time([1,3,2,7,5]) == -1
+
+# -----------BENCHMARKS-----------------------
+def rand_arry(size)
+ Array.new(size){rand(size)}
+end
+
+SIZE = 10000
+
+Benchmark.bm(10) do |benchmark|
+  benchmark.report("no hashes:") { 1000.times { pivot_index(rand_arry(SIZE)) } }
+  benchmark.report("hashes:") { 1000.times { pivot_index_with_hashes_this_time(rand_arry(SIZE)) } }
+end
